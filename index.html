@@ -1,0 +1,63 @@
+<html>
+    <script>
+       function computerPlay(){
+            let play = ["rock", "paper", "sisscor"];
+            var rand = play[Math.floor(Math.random() * play.length)];
+            return rand;
+        }
+
+       
+        
+        function oneRound(computer,human){
+            var x;
+            if (computer == "rock" && human == "sisscor"){
+                x = 1;
+                console.log("Rock beats Sisscor ----computer wins!!");
+            }else if(computer == "rock" && human == "paper"){
+                x = 2;
+                console.log("Paper beats Rocks-----Human wins!!");
+            }else if(computer == "paper" && human == "rock"){
+                x = 1
+                console.log("Paper beats Rock-----computer wins!!");
+            }else if(computer == "sisscor" && human == "rock"){
+                x = 2
+                console.log("Rock beats sisscor----Human wins!!");
+            }else if(computer == "paper" && human == "sisscor"){
+                x = 2
+                console.log("Sisscor beats Paper-----Human wins!!");
+            }else if(computer == "sisscor" && human == "paper"){
+                x = 1
+                console.log("Sisscor beats Paper----computer wins!!");
+            }else {
+                console.log("Draw!!!!")
+            }
+            return x;
+        }
+  
+    
+    function game (){
+        
+        
+        var i;
+        for (i = 0; i < 5; i++){
+            var playerSelection = prompt("Choose one: Rock, Paper and Sisscor?").toUpperCase();
+            var computerSelection = computerPlay();
+            y = oneRound(computerSelection, playerSelection);
+            switch(y){
+                case 1:
+                    var z = 0;
+                    z++;
+                    break;
+                case 2:
+                    var n = 0;
+                    n++;
+                    break;
+            }
+
+        }
+        console.log("Human: " + n + "Compute: " + z);
+    }
+
+    game();
+    </script>
+</html>
